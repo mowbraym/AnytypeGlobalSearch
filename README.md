@@ -16,13 +16,13 @@ I use the following command line
 `$ socat -d TCP4-LISTEN:31009,fork,bind=192.168.1.10 TCP4:127.0.0.1:31009`   
 where `192.168.1.10` is the IP Address of my local machine.   
 ## Environment Variables   
-### ANYTYPE\_TOKEN   
+### ANYTYPE_TOKEN   
 This is your API Key. Include the text 'Bearer ' at the beginning. I use the command   
-`$ export ANYTYPE\_TOKEN="Bearer SM/ … U="`   
+`$ export ANYTYPE_TOKEN="Bearer SM/ … U="`   
 where `SM/ … U=` would be replaced with your API key.   
-### ANYTYPE\_URL   
+### ANYTYPE_URL   
 This is the IP Address and other prefix stuff for the API call. I use the command   
-`$ ANYTYPE\_URL="http://192.168.1.10:31009/v1/"`   
+`$ export ANYTYPE_URL="http://192.168.1.10:31009/v1/"`   
 Where `192.168.1.10` would be replaced with your machine's IP Address.   
 ## Parameters   
 ### -h Help   
@@ -40,7 +40,7 @@ If no Search Text is entered on the command line, the program will prompt for en
 Note that pagination is not supported. Search shows only the first 1000 matches (i.e. a single call to the Search API with the maximum allowable rows). At this time no sorting is implemented.   
 ## Heading Line   
 Consists of four pipe separated fields, something like   
-`17 \| Music Days \| Page \| mySpace`   
+`17 | Music Days | Page | mySpace`   
 The first column is the result number, starting at 0 to a maximum 999. "17" in this example.   
 The second column is the Object Name, truncated to 200 characters unless the -v parameter is used. "Music Days" in this example.   
 The third column is the Object Type. "Page" in this example.   
