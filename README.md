@@ -13,7 +13,7 @@ A Pascal unit file that is the beginnings of a library to implement all the Anyt
 ## Port Redirection   
 I found that I had trouble talking to the Anytype API locally without first setting up a port redirect using [socat](https://packages.debian.org/sid/socat).   
 I use the following command line   
-`socat -d TCP4-LISTEN:31009,fork,bind=192.168.1.10 TCP4:127.0.0.1:31009`   
+`$ socat -d TCP4-LISTEN:31009,fork,bind=192.168.1.10 TCP4:127.0.0.1:31009`   
 where `192.168.1.10` is the IP Address of my local machine.   
 ## Environment Variables   
 ### ANYTYPE\_TOKEN   
@@ -34,7 +34,8 @@ Verbose mode. By Default, object Name and Snippet values are truncated at 200 ch
 ### -q Quiet   
 Quiet mode - suppresses the display of the version number   
 ### Other text   
-Any other text is considered to be the text you wish to search for. For search text containing spaces. "enclose the text in double quotes".   
+Any other text is considered to be the text you wish to search for. For search text containing spaces. "enclose the text in double quotes".
+If no Search Text is entered on the command line, the program will prompt for entry. You can still use the "" at the prompt to enter a search containing spaces.
 # Output   
 Note that pagination is not supported. Search shows only the first 1000 matches (i.e. a single call to the Search API with the maximum allowable rows). At this time no sorting is implemented.   
 ## Heading Line   
